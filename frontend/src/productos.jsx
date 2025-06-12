@@ -51,7 +51,6 @@ export default function Productos() {
     </li>
   ))}
 </ul>
-
     </div>
   );
 }
