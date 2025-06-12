@@ -5,7 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
-# Middleware CORS para permitir conexión desde el frontend
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:5173"],
@@ -14,18 +14,17 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Modelo base para creación (sin ID)
 class ProductoBase(BaseModel):
     nombre: str
     precio: float
 
-# Modelo completo con ID
+
 class Producto(ProductoBase):
     id: int
 
-# Base de datos en memoria
+
 productos: List[Producto] = []
-next_id = 1  # ID autoincremental
+next_id = 1 
 
 @app.get("/productos", response_model=List[Producto])
 def obtener_productos():
