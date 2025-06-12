@@ -43,7 +43,6 @@ export default function Productos() {
       <input placeholder="Nombre" value={nombre} onChange={e => setNombre(e.target.value)} />
       <input placeholder="Precio" value={precio} onChange={e => setPrecio(e.target.value)} />
       <button onClick={agregarProducto}>Agregar</button>
-
      <ul>
   {productos.map(p => (
     <li key={p.id}>
